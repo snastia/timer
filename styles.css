@@ -27,3 +27,10 @@
     visibility: visible;
     opacity: 1;
   }
+
+  /* ------ */
+
+  .btn-js{
+    position: absolute;
+    background-color: black;
+  }

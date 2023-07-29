@@ -15,7 +15,10 @@
 
 const text = document.querySelector(".text")
 
-
+const intervalSetId = setInterval(() => {
+  const color = Math.floor(Math.random()*16777215).toString(16);
+  text.style.color = `#${color}`
+}, 2000)
 
 // 3
 
@@ -28,12 +31,24 @@ let setTime = 0
 const timerId = setInterval(() => {
   setTime += 1
   sec.textContent = setTime
-
-  
+  const left = Math.random()*100
+  const top = Math.random()*100
+  btnJs.style.left = `${left}%`
+  btnJs.style.top = `${top}%`
 }, 1000)
+
+let score = 0
+
+classicBtn.addEventListener("click", () => {
+ score ++
+ sec.textContent = score
+})
+
 
 // 4
 
 const input = document.querySelector(".input-js")
 const btnSend = document.querySelector(".send-btn")
 
+btnSend.addEventListener("click", alrt)
+function alrt(){setTimeout(() => {alert("hi")}, input.value*1000)}
