@@ -1,54 +1,33 @@
-// 1
-
-// let count = 0
-
-// const intervalId = setInterval(() => {
-//     count += 1
-//     if (count === 5) {
-//         clearInterval(intervalId)
-//     } else {
-//        alert("Hey!") 
-//     }
-// }, 1500)
-
-// 2
-
-const text = document.querySelector(".text")
-
-const intervalSetId = setInterval(() => {
-  const color = Math.floor(Math.random()*16777215).toString(16);
-  text.style.color = `#${color}`
-}, 2000)
-
-// 3
-
 const classicBtn = document.querySelector(".btn")
 const btnJs = document.querySelector(".btn-js")
 const sec = document.querySelector(".seconds")
 
-let setTime = 0
+let setTime = 60
 
 const timerId = setInterval(() => {
-  setTime += 1
+  setTime -= 1
   sec.textContent = setTime
   const left = Math.random()*100
   const top = Math.random()*100
   btnJs.style.left = `${left}%`
   btnJs.style.top = `${top}%`
+
+  if(setTime === 30){
+    alert("залишилося менше половини часу")
+  }
 }, 1000)
 
-let score = 0
+// 2
 
-classicBtn.addEventListener("click", () => {
- score ++
- sec.textContent = score
-})
+const secEl = document.querySelector(".sec")
 
+let setTimer = 30
 
-// 4
-
-const input = document.querySelector(".input-js")
-const btnSend = document.querySelector(".send-btn")
-
-btnSend.addEventListener("click", alrt)
-function alrt(){setTimeout(() => {alert("hi")}, input.value*1000)}
+const timer = setInterval(() => {
+  setTimer -= 0.1
+  secEl.textContent = setTimer
+  const left = Math.random()*100
+  const top = Math.random()*100
+  btnJs.style.left = `${left}%`
+  btnJs.style.top = `${top}%`
+}, 1000)
